@@ -25,12 +25,20 @@
         height: 100%;
         margin: 0;
         background: transparent;
-        color: white;
+        color: grey;
         text-align: center;
         font-size: 20px;
     }
 </style>
 <body>
-<div id="clock">{{ .time }}</div>
+<div id="clock"></div>
+<script>
+    const updateInterval = 1000; // 1s
+    const clock = document.getElementById("clock");
+
+    setInterval(() => {
+        clock.innerText = Date().toLocaleString();
+    }, updateInterval)
+</script>
 </body>
 </html>
